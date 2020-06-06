@@ -1,0 +1,50 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_return</item>
+    </style>
+
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="OverlayThemeRed" parent="AppTheme.NoActionBar">
+        <item name="colorPrimary">#CC0000</item>
+        <item name="colorPrimaryDark">#8B0000</item>
+        <item name="colorAccent">#FF6666</item>
+    </style>
+    <style name="OverlayThemeBlue" parent="AppTheme.NoActionBar">
+        <item name="colorPrimary">#0080FF</item>
+        <item name="colorPrimaryDark">#000080</item>
+        <item name="colorAccent">#66B2FF</item>
+    </style>
+    <style name="OverlayThemeGreen" parent="AppTheme.NoActionBar">
+        <item name="colorPrimary">#4C9900</item>
+        <item name="colorPrimaryDark">#006400</item>
+        <item name="colorAccent">#98FB98</item>
+    </style>
+    <style name="OverlayThemePink" parent="AppTheme.NoActionBar">
+        <item name="colorPrimary">#FF007F</item>
+        <item name="colorPrimaryDark">#CC0066</item>
+        <item name="colorAccent">#FF99CC</item>
+    </style>
+
+
+    <style name="SubTextAppearance">
+        <item name="android:textColor">@color/textcolor</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark"/>
+
+</resources>

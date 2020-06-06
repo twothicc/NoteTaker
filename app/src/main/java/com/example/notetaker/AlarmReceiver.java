@@ -1,0 +1,40 @@
+package com.example.notetaker;
+
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+
+import androidx.core.app.NotificationCompat;
+
+public class AlarmReceiver extends BroadcastReceiver {
+    private NotificationManager notificationManager;
+    private static final String PRIMARY_CHANNEL_ID="primary_notification_channel";
+    private static final int NOTIFICATION_ID=0;
+    private String mNotificationTitle;
+    private String mNotificationContent;
+
+    ////////////USED AS KEYS TO ACCESS ALARM'S PENDING INTENT'S INTENT'S DATA
+    private static final String NOTIFICATION_TITLE="notification_title";
+    private static final String NOTIFICATION_CONTENT="notification_content";
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        notificationManager=(NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        mNotificationTitle=intent.getStringExtra(NOTIFICATION_TITLE);
+        mNotificationContent=intent.getStringExtra(NOTIFICATION_CONTENT);
+        deliverNotification(context);
+
+    }
+
+    private void deliverNotification(Context context){
+        Intent contentIntent=new Intent(context,MainActivity.class);
+        PendingIntent pendingContentIntent=PendingIntent.getActivity(context,NOTIFICATION_ID,contentIntent,PendingIntent.FLAG_UPDATE_CURRENT);
+        NotificationCompat.Builder notifyBuilder=new NotificationCompat.Builder(context,PRIMARY_CHANNEL_ID).setContentTitle(mNotificationTitle).setContentText(mNotificationContent)
+                .setSmallIcon(R.drawable.ic_notification).setPriority(NotificationCompat.PRIORITY_HIGH).setContentIntent(pendingContentIntent)
+                .setAutoCancel(true).setDefaults(NotificationCompat.DEFAULT_ALL);
+        notificationManager.notify(NOTIFICATION_ID,notifyBuilder.build());
+    }
+
+}

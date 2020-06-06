@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".NoteViewer">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true">
+
+
+    <LinearLayout
+        android:id="@+id/Note_Viewer_Main_Content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/layout_border">
+
+            <TextView
+                android:id="@+id/title_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:background="?colorPrimaryDark"
+                android:text="Title"
+                android:textAlignment="center"
+                android:textColor="@android:color/white" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title_label"
+                android:background="@drawable/layout_border">
+
+                <TextView
+                    android:id="@+id/View_Note_Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="2dp"
+                    android:layout_marginTop="6dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/textcolor"
+                    android:textSize="24sp"
+                    tools:text="Placeholder Title" />
+
+                <EditText
+                    android:id="@+id/Edit_Note_Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:hint="Edit Title Here"
+                    android:importantForAutofill="no"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:textAlignment="center" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/layout_border">
+
+                <TextView
+                    android:id="@+id/content_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:background="?colorPrimaryDark"
+                    android:text="Content"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_below="@id/content_label">
+
+                    <com.example.notetaker.MaxHeightScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:maxHeight="360dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/View_Note_Content"
+                                style="@style/SubTextAppearance"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dp"
+                                android:textAlignment="textStart"
+                                tools:text="Placeholder Content" />
+
+                            <EditText
+                                android:id="@+id/Edit_Note_Content"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dp"
+                                android:hint="Edit Content Here"
+                                android:importantForAutofill="no"
+                                android:inputType="textMultiLine|textCapSentences"
+                                android:textAlignment="textStart" />
+                        </RelativeLayout>
+
+
+                    </com.example.notetaker.MaxHeightScrollView>
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/layout_border">
+
+                <TextView
+                    android:id="@+id/datetime_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:background="?colorPrimaryDark"
+                    android:text="Date/Time"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/datetime_label"
+                    android:background="@drawable/layout_border">
+
+                    <TextView
+                        android:id="@+id/View_Note_Date"
+                        style="@style/SubTextAppearance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:textAlignment="center"
+                        tools:text="Date" />
+
+                    <TextView
+                        android:id="@+id/View_Note_Time"
+                        style="@style/SubTextAppearance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/View_Note_Date"
+                        android:layout_margin="2dp"
+                        android:textAlignment="center"
+                        tools:text="Time" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+
+        <Button
+            android:id="@+id/Save_Button"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginTop="30dp"
+            android:background="?colorPrimaryDark"
+            android:onClick="onSaveNote"
+            android:text="Save Note"
+            android:textColor="@android:color/white" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="25dp"/>
+
+    </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

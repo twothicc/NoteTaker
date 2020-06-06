@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group>
+        <item
+            android:id="@+id/GreyThemeSelection"
+            android:title="Grey Theme"
+            android:orderInCategory="1"/>
+    </group>
+    <group>
+        <item
+            android:id="@+id/RedThemeSelection"
+            android:title="Red Theme"
+            android:orderInCategory="10"/>
+    </group>
+    <group>
+        <item
+            android:id="@+id/GreenThemeSelection"
+            android:title="Green Theme"
+            android:orderInCategory="20"/>
+    </group>
+    <group>
+        <item
+            android:id="@+id/BlueThemeSelection"
+            android:title="Blue Theme"
+            android:orderInCategory="30"/>
+    </group>
+    <group>
+        <item
+            android:id="@+id/PinkThemeSelection"
+            android:title="Pink Theme"
+            android:orderInCategory="40"/>
+    </group>
+</menu>

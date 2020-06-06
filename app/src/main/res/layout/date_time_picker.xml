@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:background="@drawable/white_filled_layout_border">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Select Alarm Date &amp; Time"
+        android:textColor="@android:color/white"
+        android:textAlignment="center"
+        android:background="?colorPrimaryDark"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center_horizontal">
+        <Button
+            android:id="@+id/date_picker_button"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:text="Set Date"
+            android:textColor="@android:color/white"
+            android:background="@drawable/primary_filled_layout_border"/>
+        <Button
+            android:id="@+id/time_picker_button"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_toEndOf="@+id/date_picker_button"
+            android:layout_marginStart="30dp"
+            android:text="Set Time"
+            android:textColor="@android:color/white"
+            android:background="@drawable/primary_filled_layout_border"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:layout_gravity="center_horizontal">
+        <TextView
+            android:id="@+id/date_picked_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            tools:text="Date set for: MM/DD/YY"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/time_picked_text"
+            tools:text="Time set for: HH/MM"
+            android:textAlignment="center"
+            android:layout_below="@id/date_picked_text"/>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/Alarm_confirm_button"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Set Alarm"
+        android:textColor="@android:color/white"
+        android:background="@drawable/primary_filled_layout_border"/>
+
+</LinearLayout>
